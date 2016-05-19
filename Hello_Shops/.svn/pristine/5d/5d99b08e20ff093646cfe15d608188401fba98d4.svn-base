@@ -1,0 +1,30 @@
+package ye.hello.shops.webservices.restful;
+
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+// @RequestMapping("/{name}")
+public class UserManagement {
+
+	@RequestMapping(value = "/{name}", method = RequestMethod.GET)
+	public String index(@PathVariable String name) {
+		String result = "Hello " + name;
+		return result;
+	}
+
+	@RequestMapping(value = "/delete/{name}", method = RequestMethod.GET)
+	public String index1(@PathVariable String name) {
+		String result = "Hello " + name;
+		return result;
+	}
+
+	@RequestMapping(value = "/user_register", method = RequestMethod.GET)
+	public String userRegister() {
+		System.out.println("user Registrations.........");
+		return "User Registrations";
+	}
+
+}
